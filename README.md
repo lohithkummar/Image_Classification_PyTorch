@@ -1,4 +1,4 @@
-# ImageClassificationPyTorch
+# Image Classification PyTorch
 There is Complete step by step process to train a model using transfer learning and classify images accordingly.
 
 There are Two Files in the repository that are supported by Jupyter Notebook.
