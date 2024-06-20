@@ -1,6 +1,6 @@
-# Project Title: EfficientNetB0 Image Classification
+# Plant Disease Classification in Pytorch
 ## Description
-This project demonstrates training and inference for an image classification model using EfficientNetB0. The model is designed to classify images into predefined categories and was developed using PyTorch.
+This project demonstrates training and inference for an image classification model using Transfer Learning. The model is designed to classify images into predefined categories and was developed using PyTorch.
 
 Installation
 To set up the project on your local machine, follow these steps:
@@ -21,6 +21,30 @@ source venv/bin/activate  # On Windows use `venv\Scripts\activate`
 ```python
 pip install -r requirements.txt
 ```
+
+**5. Dataset Folder structure**
+```
+data/
+├── train/
+│   ├── Bacterial_spot/
+│   ├── Black_mold/
+│   └── ...
+└── val/
+├── Bacterial_spot/
+├── Black_mold/
+└── ...
+```
+### Disease list
+The system uses an EfficientNet-B0 model trained on a dataset of tomato plant images to classify 7 different conditions:
+
+- Bacterial spot
+- Black mold
+- Early blight
+- Healthy
+- Late blight
+- Mosaic virus
+- Septoria spot
+
 
 ## Usage
 ### Model Training
