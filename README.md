@@ -1,16 +1,80 @@
-# Image Classification PyTorch
-There is Complete step by step process to train a model using transfer learning and classify images accordingly.
+# Project Title: EfficientNetB0 Image Classification
+## Description
+This project demonstrates training and inference for an image classification model using EfficientNetB0. The model is designed to classify images into predefined categories and was developed using PyTorch.
 
-There are Two Files in the repository that are supported by Jupyter Notebook.
-1. Train the model
-2. Inference
+Installation
+To set up the project on your local machine, follow these steps:
+**1. Clone the repository**
+```python
+git clone https://github.com/lohithkummar/Plant-Disease-Classification-in-PyTorch.git
+```
+**2. Change Directories**
+```python
+  cd Plant-Disease-Classification-in-PyTorch
+```
+**3. Create and activate a virtual environment:**
+```python
+python -m venv venv
+source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+```
+**4. Install the required dependencies:**
+```python
+pip install -r requirements.txt
+```
 
-To Train the model and get infoemation about the model regarding Accuracy and Loss
-and Experiment on the model can download from the repository and can make changes 
-and find the results of different changes one can use Train the model.ipynb
+## Usage
+### Model Training
+To train the model, you need to prepare your dataset and follow the steps below:
+
+**1. Data Preparation:**
+
+Organize your dataset into train and val directories. Each class should have its sub-directory within these folders.
+Update the data_dir variable in the train-the-model.py script to point to your dataset directory.
+**2. Training the model**
+```python
+python train-the-model.py
+```
+## Inference
+To perform inference using the trained model:
+
+**1. Prepare the Inference Script:**
+
+Ensure you have a trained model checkpoint saved.
+Update the script inference.py with the path to your checkpoint file.
+
+**2. Running the inference**
+```python
+python inference.py --input_path /path/to/your/image.jpg
+```
+
+## Model Training
+The training script train-the-model.py includes the following steps:
+
+**1. Data Augmentation and Normalization:**
+
+- Training data undergoes random resizing, cropping, and horizontal flipping.
+- Validation data is resized and center-cropped.
+
+**2. Model Setup:**
+
+- EfficientNetB0 is used as the base model.
+- The final classification layer is modified to match the number of target classes.
+
+**3. Training Process:**
+
+- The model is trained for a specified number of epochs with an initial learning rate of 0.001.
+- The learning rate is decayed by a factor of 0.1 every 7 epochs.
+- Training and validation accuracies and losses are printed for each epoch.
+- 
+## Inference
+The inference script inference.py loads a trained model and performs predictions on a given input image. The script handles preprocessing of the input image, model inference, and post-processing of the output to display the predicted class.
+
+## Results
+The best model achieved an accuracy of 86.57% on the validation set. Detailed training logs and accuracy/loss plots can be found in the logs directory.
+
+## Contributing
+Contributions are welcome! Please fork the repository and submit a pull request for any enhancements or bug fixes.
 
 You can practice it with the following kaggle dataset: 
 PlantVillage: https://www.kaggle.com/datasets/abdallahalidev/plantvillage-dataset
 
-To check the real time application of the model that you have trained test it out with different images 
-in the file Inference.ipynb
